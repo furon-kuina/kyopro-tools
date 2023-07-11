@@ -1,2 +1,2 @@
 # kyopro-tools
-Tools for kyopro(
+Tools for kyopro (competitive programming).
