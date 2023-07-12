@@ -8,6 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
+	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 )
 
@@ -22,7 +23,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("randomTest called")
+		fmt.Println("Running random tests...")
 
 		for i := 1; i <= 10000; i++ {
 			out, err := generate("./g.out")
@@ -40,14 +41,21 @@ to quickly create a Cobra application.`,
 				fmt.Println(err)
 				return
 			}
+
 			if o1 != o2 {
-				fmt.Printf("Output didn't match at testcase #%d\n", i)
+
+				color.Red.Printf("Output didn't match at testcase #%d\n", i)
+				fmt.Printf("Testcase:\n%s\n", out)
+				fmt.Printf("Solver:\n%s\n", o1)
+				fmt.Printf("Brute force:\n%s\n", o2)
+
+				return
 			}
 			if i%1000 == 0 {
 				fmt.Printf("%d cases passed\n", i)
 			}
 		}
-
+		color.Green.Println("No mismatch detected.")
 	},
 }
 
