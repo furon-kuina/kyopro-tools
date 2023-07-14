@@ -1,0 +1,6 @@
+{
+  "generator": "g.out",
+  "solver": "a.out",
+  "brute_force": "b.out",
+  "cases_num": 10000
+}
