@@ -1,15 +1,13 @@
-Tools for kyopro (competitive programming).
+競技プログラミング用ツール群
 
 ## Installation
 
-## random-tester
-You can compare outputs of your solver and a brute force solver using a random case generator.
+## ランダムテスター
+テストケース生成プログラムを用いて、提出用の解法と愚直解法を比較できます。
 
-### Usage
-Test your solver with
+### 使用法1
+以下のコマンドでランダムテストを行うことができます。
 `$ kyopro-tools rt`
 
-## bundle-submit
-You can bundle your codes and submit them.
-
-Depends on: online-judge-tools, atcoder-cli
+### 設定
+設定は`config.json`に記述します。
